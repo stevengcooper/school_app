@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  root 'authenticate#login'
+  resources :dashboards
+  root 'dashboards#index'
+
   get 'authenticate/login'
+  post 'authenticate/login'
 
   get 'authenticate/logout'
+  post 'authenticate/logout'
 
   resources :grades
   resources :parents
