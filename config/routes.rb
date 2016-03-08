@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :teachers
   resources :dashboards
   root 'dashboards#index'
 
@@ -11,7 +12,6 @@ Rails.application.routes.draw do
   resources :grades
   resources :parents
   resources :students
-  resources :teachers
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
