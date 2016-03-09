@@ -16,8 +16,9 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :teacher_id %><br>
-    <%= f.number_field :teacher_id %>
+    <%= f.label :course_id %>
+    <%= f.select(:course_id, options_for_select([["Appetizer", 1], ["Entree", 2], ["Dessert", 3]])) %>
+    <% f.hidden_field :course_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

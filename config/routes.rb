@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+  get 'parent_authenticate/login'
+  post 'parent_authenticate/login'
+
+  get 'parent_authenticate/logout'
+  post 'parent_authenticate/logout'
+
+  get 'student_authenticate/login'
+  post 'student_authenticate/logout'
+
+  get 'student_authenticate/logout'
+  post 'student_authenticate/logout'
+
+  get 'teacher_authenticate/login'
+  post 'teacher_authenticate/login'
+
+  get 'teacher_authenticate/logout'
+  post 'teacher_authenticate/logout'
+
   resources :teachers
   resources :dashboards
   root 'dashboards#index'

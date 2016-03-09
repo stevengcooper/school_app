@@ -1,5 +1,4 @@
-class AuthenticateController < ApplicationController
-
+class TeacherAuthenticateController < ApplicationController
 
   def login
     if request.post?
@@ -15,12 +14,7 @@ class AuthenticateController < ApplicationController
 
   def logout
     session[:teacher_id] = nil
-    redirect_to authenticate_login_path, notice: "See you soon."
+    redirect_to teachers_path, notice: "See you soon."
   end
 
-  private def authenticate
-    if session[:teacher_id].nil?
-      redirect_to authenticate_login_path, notice: "Nice try."
-    end
-  end
 end
