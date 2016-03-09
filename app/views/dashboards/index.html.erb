@@ -7,14 +7,35 @@
   <%= image_tag asset_url("YOLO-school.jpg"), id: "top_pic" %>
 </div>
 
-<div class="links">
-  <%= link_to "Teacher Login", teacher_authenticate_login_path %>
+<div class="container" id="home" >
+
+  <div class="col-md-4  col-sm-4">
+
+    <p>
+      <div class="links">
+        <%= link_to "Teacher Login", teacher_authenticate_login_path %>
+      </div>
+    </p>
+  </div>
+  <div class="col-md-4  col-sm-4">
+    <p>
+      <div class="links">
+        <%= link_to "Student Login", student_authenticate_login_path %>
+      </div>
+
+    </p>
+      </div>
+        <div class="col-md-4  col-sm-4">
+                        <p>
+                          <div class="links">
+                            <%= link_to "Parent Login", parent_authenticate_login_path %>
+                          </div>
+                        </p>
+
+            </div>
+        </div>
+
 </div>
-<div class="links">
-  <%= link_to "Student Login", student_authenticate_login_path %>
-</div>
-<div class="links">
-  <%= link_to "Parent Login", parent_authenticate_login_path %>
-</div>
+
 
 </body>
