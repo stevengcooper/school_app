@@ -1,6 +1,7 @@
 class TeachersController < ApplicationController
   before_action :set_teacher, only: [:show, :edit, :update, :destroy]
-
+  before_action :logged_in?
+  before_action :logged_in_as_teacher?
   # GET /teachers
   def index
     @teachers = Teacher.all
@@ -53,6 +54,6 @@ class TeachersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def teacher_params
-      params.require(:teacher).permit(:name, :email, :password_digest)
+      params.require(:teacher).permit(:name, :email, :password)
     end
 end

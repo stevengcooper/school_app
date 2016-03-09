@@ -1,32 +1,12 @@
 Rails.application.routes.draw do
-  get 'parent_authenticate/login'
-  post 'parent_authenticate/login'
+  get 'sessions/new'
+  post 'sessions/create'
+  get 'sessions/destroy'
 
-  get 'parent_authenticate/logout'
-  post 'parent_authenticate/logout'
 
-  get 'student_authenticate/login'
-  post 'student_authenticate/logout'
-
-  get 'student_authenticate/logout'
-  post 'student_authenticate/logout'
-
-  get 'teacher_authenticate/login'
-  post 'teacher_authenticate/login'
-
-  get 'teacher_authenticate/logout'
-  post 'teacher_authenticate/logout'
-
+  root 'dashboards#index'
   resources :teachers
   resources :dashboards
-  root 'dashboards#index'
-
-  get 'authenticate/login'
-  post 'authenticate/login'
-
-  get 'authenticate/logout'
-  post 'authenticate/logout'
-
   resources :grades
   resources :parents
   resources :students

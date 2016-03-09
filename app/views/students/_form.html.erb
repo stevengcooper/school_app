@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :teacher_id %>
-    <%= f.select(:teacher_id, options_for_select([["Sally", 1]])) %>
+    <%= f.collection_select :teacher_id, Teacher.all, :id, :name %>
     <% f.hidden_field :teacher_id %>
   </div>
   <div class="field">

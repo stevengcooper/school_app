@@ -1,4 +1,5 @@
 <body class="root">
+
 <h1> Welcome to Yolo Middle School</h1>
 <h3> Home of the Fighting Delinquents!</h3>
 
@@ -13,28 +14,26 @@
 
     <p>
       <div class="links">
-        <%= link_to "Teacher Login", teacher_authenticate_login_path %>
+        <%= link_to "Teacher Login", sessions_new_path %>
       </div>
     </p>
   </div>
   <div class="col-md-4  col-sm-4">
     <p>
       <div class="links">
-        <%= link_to "Student Login", student_authenticate_login_path %>
+        <%= link_to "Student Login", sessions_new_path %>
       </div>
-
     </p>
+  </div>
+
+  <div class="col-md-4  col-sm-4">
+    <p>
+      <div class="links">
+        <%= link_to "Parent Login", sessions_new_path %>
       </div>
-        <div class="col-md-4  col-sm-4">
-                        <p>
-                          <div class="links">
-                            <%= link_to "Parent Login", parent_authenticate_login_path %>
-                          </div>
-                        </p>
+    </p>
 
-            </div>
-        </div>
-
+  </div>
 </div>
 
 

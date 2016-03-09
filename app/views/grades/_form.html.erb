@@ -12,8 +12,13 @@
   <% end %>
   <div class="field">
     <%= f.label :teacher_id %>
-    <%= f.select(:teacher_id, options_for_select([["Sally", 1]])) %>
+    <%= f.collection_select :teacher_id, Teacher.all, :id, :name, {:prompt => 'Choose Teacher'} %>
     <% f.hidden_field :teacher_id %>
+  </div>
+  <div class="field">
+    <%= f.label :student_id %>
+    <%= f.collection_select :student_id, Student.all, :id, :name, {:prompt => 'Choose Student'} %>
+    <% f.hidden_field :student_id %>
   </div>
 
   <div class="field">

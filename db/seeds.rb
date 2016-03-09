@@ -7,6 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 t = Teacher.create(name: "Sally", email: "sally@gmail.com", password: "sally")
 
-Student.create(name: "Billy Tables", teacher_id: 1)
+Student.create(name: "Billy Tables", teacher_id: 1, email: "billyt@gmail.com", password: "billy")
 
-Parent.create(name: "Molly Tables", student_id: 1)
+Parent.create(name: "Molly Tables", student_id: 1, email: "molly@gmail.com", password: "molly")
