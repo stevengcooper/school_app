@@ -1,13 +1,13 @@
 
 
-<h1>Listing Teachers</h1>
+<h1>Teacher Homepage</h1>
 
-<table>
+<table class="index">
   <thead>
     <tr>
       <th>Name</th>
       <th>Email</th>
-      <th colspan="2"></th>
+      <th colspan="20"></th>
     </tr>
   </thead>
 
@@ -27,7 +27,11 @@
 <br>
 <div class="links" >
 <%= link_to 'New Teacher', new_teacher_path %>
+</div>
+<div class="links" >
 <%= link_to 'Post Grades', new_grade_path %>
+</div>
+<div class="links" >
 <%= link_to "New Student", new_student_path %>
 </div>
 <div class="links">

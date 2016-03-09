@@ -24,7 +24,7 @@ class TeachersController < ApplicationController
     @teacher = Teacher.new(teacher_params)
 
     if @teacher.save
-      redirect_to @teacher, notice: 'Teacher was successfully created.'
+      redirect_to teachers_path, notice: 'Teacher was successfully created.'
     else
       render :new
     end

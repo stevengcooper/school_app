@@ -24,7 +24,7 @@ class StudentsController < ApplicationController
     @student = Student.new(student_params)
 
     if @student.save
-      redirect_to @student, notice: 'Student was successfully created.'
+      redirect_to students_path, notice: 'Student was successfully created.'
     else
       render :new
     end

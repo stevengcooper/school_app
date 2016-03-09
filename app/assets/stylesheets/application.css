@@ -17,15 +17,46 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+h1 {
+  color: #005b96;
+}
 
-#school_pic {
+h3 {
+  color: #005b96;
+}
+.school_pic {
   align-self: center;
 }
 
-#links {
-  border: 1px solid black;
-}
+.links {
+  display: block;
+  height: 30px;
+  width: 150px;
+  background: #b3cde0;
+  border: 2px solid rgba(33, 68, 72, 0.59);
 
-#body {
+  color: rgba(0, 0, 0, 0.55);
+  text-align: center;
+  font: bold 1em/20px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+
+  background: linear-gradient(top, #34696f, #2f5f63);
+  border-radius: 50px;
+  box-shadow: 0 8px 0 #1b383b;
+  text-shadow: 0 2px 2px rgba(255, 255, 255, 0.2);
+ }
+
+ .index {
+ 	margin:0px;padding:0px;
+ 	width:100%;
+ 	box-shadow: 10px 10px 5px #888888;
+ 	border:1px solid #000000;
+
+ 	-moz-border-radius-bottomleft:0px;
+ 	-webkit-border-bottom-left-radius:0px;
+ 	border-bottom-left-radius:0px;
+
+
+.root {
   border: 2px solid black;
+  margin-right: 800px;
 }

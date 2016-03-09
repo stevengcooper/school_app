@@ -1,8 +1,8 @@
-<p id="notice"><%= notice %></p>
+
 
 <h1>Listing Grades</h1>
 
-<table>
+<table class="index">
   <thead>
     <tr>
       <th>Score</th>
@@ -27,6 +27,9 @@
 </table>
 
 <br>
-
-<%= link_to 'New Grade', new_grade_path %>
-<%= link_to 'Teacher Home', teachers_path %>
+<div class="links">
+  <%= link_to 'New Grade', new_grade_path %>
+</div>
+<div class="links">
+  <%= link_to 'Teacher Home', teachers_path %>
+</div>

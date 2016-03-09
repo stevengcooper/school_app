@@ -24,7 +24,7 @@ class GradesController < ApplicationController
     @grade = Grade.new(grade_params)
 
     if @grade.save
-      redirect_to @grade, notice: 'Grade was successfully created.'
+      redirect_to grades_path, notice: 'Grade was successfully created.'
     else
       render :new
     end
