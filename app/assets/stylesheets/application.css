@@ -17,6 +17,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 h1 {
   color: #005b96;
 }
@@ -24,6 +25,7 @@ h1 {
 h3 {
   color: #005b96;
 }
+
 .school_pic {
   align-self: center;
 }

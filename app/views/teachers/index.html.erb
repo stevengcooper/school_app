@@ -23,17 +23,42 @@
     <% end %>
   </tbody>
 </table>
+<div class="container" id="home" >
 
+        <div class="col-md-4  col-sm-4">
+
+                        <p>
+                          <div class="links" >
+                          <%= link_to 'New Teacher', new_teacher_path %>
+                          </div>
+                        </p>
+
+
+            </div>
+         <div class="col-md-4  col-sm-4">
+                        <p>
+                          <div class="links" >
+                          <%= link_to 'Post Grades', new_grade_path %>
+                          </div>
+
+                        </p>
+            </div>
+        <div class="col-md-4  col-sm-4">
+                        <p>
+                          <div class="links" >
+                          <%= link_to "New Student", new_student_path %>
+                          </div>
+                        </p>
+
+            </div>
+        </div>
+
+</div>
 <br>
-<div class="links" >
-<%= link_to 'New Teacher', new_teacher_path %>
-</div>
-<div class="links" >
-<%= link_to 'Post Grades', new_grade_path %>
-</div>
-<div class="links" >
-<%= link_to "New Student", new_student_path %>
-</div>
-<div class="links">
-<%= link_to "Log out", teacher_authenticate_logout_path %>
+
+<div class="container" id="home" >
+  <div class="col-md-12  col-sm-12">
+    <div class="links">
+      <%= link_to "Log out", teacher_authenticate_logout_path %>
+    </div>
 </div>
