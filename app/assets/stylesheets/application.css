@@ -12,10 +12,20 @@
  *
  *= require_tree .
  *= require 'bootstrap'
- *= require 'font-awesome-animation'
- *= require 'font-awesome.min'
- *= require 'style.css'
+
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#school_pic {
+  align-self: center;
+}
+
+#links {
+  border: 1px solid black;
+}
+
+#body {
+  border: 2px solid black;
+}

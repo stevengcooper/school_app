@@ -1,13 +1,16 @@
+<body class="root">
 <h1> Welcome to Yolo Middle School</h1>
 <h3> Home of the Fighting Delinquents!</h3>
 
-<div class="col-md-12  col-sm-12">
-  <div class="top_pic">
+
+  <div class="school_pic">
   <%= image_tag asset_url("YOLO-school.jpg"), id: "top_pic" %>
 </div>
-</div>
-<p>
-  <%= link_to "Teacher Login", teacher_authenticate_login_path %>
-  <%= link_to "Student Login", student_authenticate_login_path %>
+
+<div class="links"
+<div class="btn-group" role="group" aria-label="...">
+  <%= link_to "Teacher Login", teacher_authenticate_login_path %> |
+  <%= link_to "Student Login", student_authenticate_login_path %> |
   <%= link_to "Parent Login", parent_authenticate_login_path %>
-</p>
+</div>
+</body>

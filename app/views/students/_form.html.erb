@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :teacher_id %>
+    <%= f.select(:teacher_id, options_for_select([["Sally", 1]])) %>
+    <% f.hidden_field :teacher_id %>
   </div>
   <div class="field">
-    <%= f.label :course_id %>
-    <%= f.select(:course_id, options_for_select([["Appetizer", 1], ["Entree", 2], ["Dessert", 3]])) %>
-    <% f.hidden_field :course_id %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -14,7 +14,7 @@ class TeacherAuthenticateController < ApplicationController
 
   def logout
     session[:teacher_id] = nil
-    redirect_to teachers_path, notice: "See you soon."
+    redirect_to root_path, notice: "See you soon."
   end
 
 end
