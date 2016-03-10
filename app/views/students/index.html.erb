@@ -11,7 +11,6 @@
   </thead>
 
   <tbody>
-    <% if session[:user_type] == "Teacher" %>
       <% @students.each do |student| %>
         <tr>
           <td><%= student.name %></td>
@@ -21,15 +20,5 @@
           <td><%= link_to 'Edit', edit_student_path(student) %></td>
         </tr>
       <% end %>
-    <% else%>
-    <tr>
-      <td><%= @students.name %></td>
-      <td><%= @students.email %></td>
-      <td><%= @students.teacher_id %></td>
-      <td><%= link_to 'Show', student %></td>
-      <td><%= link_to 'Edit', edit_student_path(student) %></td>
-    </tr>
-    <% end %>
-
   </tbody>
 </table>

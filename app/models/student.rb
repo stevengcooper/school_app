@@ -3,7 +3,6 @@ class Student < ActiveRecord::Base
   has_many :parents
   has_many :grades
   validates :name, presence: true
-  validates :email, uniqueness: true
   has_secure_password
   validates :teacher, presence: true
 

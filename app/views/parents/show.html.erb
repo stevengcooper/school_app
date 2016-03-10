@@ -7,8 +7,14 @@
 
 <p>
   <strong>Student:</strong>
-  <%= @parent.student_id %>
+  <%= @parent.student.name %>
 </p>
+
+<p>
+  <strong>Teacher:</strong>
+  <%= @parent.student.teacher.name %>
+</p>
+
 
 <%= link_to 'Edit', edit_parent_path(@parent) %> |
 <%= link_to 'Back', parents_path %>
