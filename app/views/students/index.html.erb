@@ -22,3 +22,17 @@
       <% end %>
   </tbody>
 </table>
+
+<% if session[:user_type] == "Teacher" %>
+  <div class="links">
+    <%= link_to "Teacher Home", teachers_path %>
+  </div>
+<% elsif session[:user_type] == "Student" %>
+  <div class="links">
+    <%= link_to "Grades", grades_path %>
+  </div>
+<% elsif session[:user_type] == "Parent" %>
+<div class="links">
+  <%= link_to "Parent Home", parents_path %>
+</div>
+<% end %>

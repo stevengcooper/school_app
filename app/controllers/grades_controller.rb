@@ -1,6 +1,6 @@
 class GradesController < ApplicationController
   before_action :set_grade, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in? 
+  before_action :logged_in?
 
   # GET /grades
   def index
@@ -8,7 +8,7 @@ class GradesController < ApplicationController
       parent = Parent.find(session[:user_id])
       @grades = Grade.where(student_id: parent.student_id)
     elsif session[:user_type] == "Student"
-      @grades = Grade.find(session[:user_id])
+      @grades = Grade.where(id: session[:user_id])
     elsif session[:user_type] == "Teacher"
       @grades = Grade.where(teacher_id: session[:user_id])
     end
