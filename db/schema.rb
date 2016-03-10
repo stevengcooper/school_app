@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160309220434) do
+ActiveRecord::Schema.define(version: 20160310020348) do
 
   create_table "dashboards", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -19,13 +19,14 @@ ActiveRecord::Schema.define(version: 20160309220434) do
   end
 
   create_table "grades", force: :cascade do |t|
-    t.string   "score"
     t.date     "date"
     t.string   "assignment_name"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "teacher_id"
+    t.integer  "score"
     t.integer  "student_id"
+    t.string   "name"
   end
 
   create_table "parents", force: :cascade do |t|

@@ -3,7 +3,14 @@ class GradesController < ApplicationController
 
   # GET /grades
   def index
-    @grades = Grade.all
+    if session[:user_type] == "Parent"
+      parent = Parent.find(session[:user_id])
+      @grades = Grade.where(student_id: parent.student_id)
+    elsif session[:user_type] == "Student"
+      @grades = Grade.find(session[:user_id])
+    elsif session[:user_type] == "Teacher"
+      @grades = Grade.where(teacher_id: session[:user_id])
+    end
   end
 
   # GET /grades/1
@@ -13,6 +20,7 @@ class GradesController < ApplicationController
   # GET /grades/new
   def new
     @grade = Grade.new
+    @teacher = Teacher.find(session[:user_id])
   end
 
   # GET /grades/1/edit

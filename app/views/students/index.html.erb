@@ -5,6 +5,7 @@
     <tr>
       <th>Name</th>
       <th>Email</th>
+      <th>Teacher Id</th>
       <th colspan="20"></th>
     </tr>
   </thead>
@@ -14,6 +15,7 @@
       <tr>
         <td><%= student.name %></td>
         <td><%= student.email %></td>
+        <td><%= student.teacher_id %></td>
         <td><%= link_to 'Show', student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
         <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -21,19 +23,3 @@
     <% end %>
   </tbody>
 </table>
-<div class="container" id="home" ></div>
-<div class="col-md-6  col-sm-6">
-  <p>
-    <div class="links" >
-      <%= link_to 'Your Grades', grades_path %>
-    </div>
-  </p>
-</div>
-<br>
-
-<div class="container" id="home" >
-  <div class="col-md-12  col-sm-12">
-    <div class="links">
-      <%= link_to "Log out", sessions_destroy_path %>
-    </div>
-</div>

@@ -7,15 +7,18 @@ class ApplicationController < ActionController::Base
    redirect_to login_path, notice: "You must log in to access this page" unless session[:user_id]
  end
 
- def logged_in_as_teacher?
+ private def authenticate_teacher
    redirect_to :back, notice: "You do not have permission to access that page." unless session[:user_type] == "Teacher"
  end
 
- def logged_in_as_student?
-   redirect_to :back, notice: "You do not have permission to access that page." unless session[:user_type] == "Student"
- end
+ private def authenticate_student
+      redirect_to root_path, notice: "You don't have permission to access that page." unless session[:user_type] == "Student"
+  end
 
- def logged_in_as_parent?
-   redirect_to :back, notice: "You do not have permission to access that page." unless session[:user_type] == "Parent"
- end
+  private def authenticate_parent
+      redirect_to root_path, notice: "You don't have permission to access that page." unless session[:user_type] == "Parent"
+  end
+
+
+
 end

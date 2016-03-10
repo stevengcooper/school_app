@@ -5,6 +5,7 @@ class Student < ActiveRecord::Base
   validates :name, presence: true
   validates :email, uniqueness: true
   has_secure_password
+  validates :teacher, presence: true
 
   def teacher_name
     teacher && teacher.name

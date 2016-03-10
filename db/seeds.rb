@@ -5,8 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-t = Teacher.create(name: "Sally", email: "sally@gmail.com", password: "sally")
+10.times do |i|
+  Teacher.create(name: Faker::Name.name, email: Faker::Internet.email, password: "monkey")
+end
 
-Student.create(name: "Billy Tables", teacher_id: 1, email: "billyt@gmail.com", password: "billy")
+50.times do |i|
+  Student.create(name: Faker::Name.name, teacher_id: rand(1..10), email: Faker::Internet.email, password: "monkey")
+end
 
-Parent.create(name: "Molly Tables", student_id: 1, email: "molly@gmail.com", password: "molly")
+50.times do |i|
+  Parent.create(name: Faker::Name.name, student_id: rand(1..10), email: Faker::Internet.email, password: "monkey")
+end
+
+50.times do |i|
+  Grade.create(score: rand(55..100), date: Date.new, assignment_name: Faker::Hipster.word, teacher_id: rand(1..10), name: Faker::Name.name, student_id: rand(1..10))
+end

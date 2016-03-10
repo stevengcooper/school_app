@@ -1,10 +1,11 @@
 class TeachersController < ApplicationController
   before_action :set_teacher, only: [:show, :edit, :update, :destroy]
   before_action :logged_in?
-  before_action :logged_in_as_teacher?
+  before_action :authenticate_teacher
   # GET /teachers
   def index
     @teachers = Teacher.all
+    @students = Student.where(teacher_id: session[:user_id])
   end
 
   # GET /teachers/1

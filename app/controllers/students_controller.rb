@@ -1,9 +1,17 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in?
+  
 
   # GET /students
   def index
-    @students = Student.all
+    if session[:user_type] == "Teacher"
+      @students = Student.where(teacher_id: [session[:user_id]])
+    elsif session[:user_type] == "Student"
+      @students = Student.where(student_id: [session[:user_id]])
+    elsif session[:user_type] == "Parent"
+      @student = Student.where(parent_id: [session[:user_id]])
+    end
   end
 
   # GET /students/1
@@ -24,7 +32,7 @@ class StudentsController < ApplicationController
     @student = Student.new(student_params)
 
     if @student.save
-      redirect_to students_path, notice: 'Student was successfully created.'
+      redirect_to teachers_path, notice: 'Student was successfully created.'
     else
       render :new
     end
@@ -53,6 +61,6 @@ class StudentsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def student_params
-      params.require(:student).permit(:name, :teacher_id)
+      params.require(:student).permit(:name, :teacher_id, :email, :password)
     end
 end

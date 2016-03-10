@@ -1,7 +1,7 @@
 
 
-<h1>Teacher Homepage</h1>
-
+<h1>Welcome Staff!</h1>
+<h3>Teachers at Yolo</h3>
 <table class="index">
   <thead>
     <tr>
@@ -23,42 +23,77 @@
     <% end %>
   </tbody>
 </table>
+
+<h3> Your Students </h3>
+<table class="index">
+  <thhead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th colspan="20"></th>
+    </tr>
+  </head>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.email %></td>
+        <td><%= link_to 'Show', student %></td>
+        <td><%= link_to 'Edit', edit_student_path(student) %></td>
+        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <div class="container" id="home" >
 
-        <div class="col-md-4  col-sm-4">
+  <div class="col-md-3  col-sm-3">
+    <p>
+      <div class="links" >
+      <%= link_to 'New Teacher', new_teacher_path %>
+      </div>
+    </p>
+  </div>
+  <div class="col-md-3  col-sm-3">
+    <p>
+      <div class="links" >
+      <%= link_to 'Post Grades', new_grade_path %>
+      </div>
 
-                        <p>
-                          <div class="links" >
-                          <%= link_to 'New Teacher', new_teacher_path %>
-                          </div>
-                        </p>
-
-
-            </div>
-         <div class="col-md-4  col-sm-4">
-                        <p>
-                          <div class="links" >
-                          <%= link_to 'Post Grades', new_grade_path %>
-                          </div>
-
-                        </p>
-            </div>
-        <div class="col-md-4  col-sm-4">
-                        <p>
-                          <div class="links" >
-                          <%= link_to "New Student", new_student_path %>
-                          </div>
-                        </p>
-
-            </div>
+    </p>
+  </div>
+  <div class="col-md-3 col-sm-3">
+      <p>
+        <div class="links" >
+        <%= link_to "New Student", new_student_path %>
         </div>
+      </p>
+  </div>
+  <div class="col-md-3  col-sm-3">
+    <div class="links">
+      <%= link_to "New Grade", new_grade_path %>
+    </div>
+  </div>
 
-</div>
 <br>
 
 <div class="container" id="home" >
-  <div class="col-md-12  col-sm-12">
+  <div class="col-md-3  col-sm-3">
     <div class="links">
       <%= link_to "Log out", sessions_destroy_path %>
     </div>
+  </div>
+  </div>
+  <div class="col-md-3 col-sm-3">
+    <div class="links">
+      <%= link_to "Parent List", parents_path %>
+    </div>
+  </div>
+  <div class="col-md-3  col-sm-3">
+    <div class="links">
+      <%= link_to "Student Grades", grades_path %>
+    </div>
+  </div>
 </div>
