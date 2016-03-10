@@ -7,3 +7,5 @@ All of the seeds have the password of `monkey`.
 To login as a teacher you can enter the email address of `hugh@runolfsdottirsauer.io` and use the above password.
 
 To login as a student you can enter the email address of `zola@kihn.biz`
+
+To login as a student you can enter the email address of 'dorris_willms@schuster.net'
