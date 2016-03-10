@@ -11,8 +11,8 @@
     </div>
   <% end %>
 
-    
-    <%= f.hidden_field :teacher_id %>
+  <%= f.label :teacher_id %><br>
+  <%= f.collection_select :teacher_id, Teacher.all, :id, :name %>
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>

@@ -1,16 +1,16 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
   before_action :logged_in?
-  
+
 
   # GET /students
   def index
     if session[:user_type] == "Teacher"
       @students = Student.where(teacher_id: [session[:user_id]])
     elsif session[:user_type] == "Student"
-      @students = Student.where(student_id: [session[:user_id]])
+      @students = Student.where(id: session[:user_id])
     elsif session[:user_type] == "Parent"
-      @student = Student.where(parent_id: [session[:user_id]])
+      @students = Student.where(parent_id: [session[:user_id]])
     end
   end
 

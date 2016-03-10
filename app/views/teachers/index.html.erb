@@ -7,6 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Email</th>
+      <th>Teacher Id</th>
       <th colspan="20"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= teacher.name %></td>
         <td><%= teacher.email %></td>
+        <td><%= teacher.id %></td>
         <td><%= link_to 'Show', teacher %></td>
         <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
         <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -47,6 +49,43 @@
   </tbody>
 </table>
 
+<h3> Your Grades </h3>
+<table class="index">
+  <thhead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th colspan="20"></th>
+    </tr>
+  </head>
+
+  <tbody>
+    <% @grades.each do |grade| %>
+      <tr>
+        <td><%= grade.assignment_name %></td>
+        <td><%= grade.student.name %></td>
+        <td><%= grade.score %></td>
+        <td><%= link_to 'Show', grade %></td>
+        <td><%= link_to 'Edit', edit_grade_path(grade) %></td>
+        <td><%= link_to 'Destroy', grade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<tbody>
+  <% @parents.each do |parent| %>
+    <tr>
+      <td><%= parent.name %></td>
+      <td><%= parent.student.name %></td>
+      <td><%= parent.email %></td>
+      <td><%= link_to 'Show', parent %></td>
+      <td><%= link_to 'Edit', edit_parent_path(parent) %></td>
+      <td><%= link_to 'Destroy', parent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
 <div class="container" id="home" >
 
   <div class="col-md-3  col-sm-3">
@@ -71,13 +110,8 @@
         </div>
       </p>
   </div>
-  <div class="col-md-3  col-sm-3">
-    <div class="links">
-      <%= link_to "New Grade", new_grade_path %>
-    </div>
-  </div>
 
-<br>
+
 
 <div class="container" id="home" >
   <div class="col-md-3  col-sm-3">

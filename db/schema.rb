@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160310020348) do
+ActiveRecord::Schema.define(version: 20160310074235) do
 
   create_table "dashboards", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 20160310020348) do
     t.integer  "teacher_id"
     t.integer  "score"
     t.integer  "student_id"
-    t.string   "name"
   end
 
   create_table "parents", force: :cascade do |t|

@@ -6,6 +6,8 @@ class TeachersController < ApplicationController
   def index
     @teachers = Teacher.all
     @students = Student.where(teacher_id: session[:user_id])
+    @grades = Grade.where(teacher_id: session[:user_id])
+    @parents = Parent.where(teacher_id: Teacher.student.teacher_id)
   end
 
   # GET /teachers/1
