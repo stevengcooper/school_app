@@ -7,7 +7,8 @@ class TeachersController < ApplicationController
     @teachers = Teacher.all
     @students = Student.where(teacher_id: session[:user_id])
     @grades = Grade.where(teacher_id: session[:user_id])
-    @parents = Parent.where(teacher_id: Teacher.student.teacher_id)
+    teacher = Teacher.find(session[:user_id])
+    @parents = Parent.all
   end
 
   # GET /teachers/1
