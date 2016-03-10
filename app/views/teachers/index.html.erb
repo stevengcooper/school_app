@@ -1,14 +1,14 @@
 
 
 <h1>Welcome Staff!</h1>
-<h3>Teachers at Yolo</h3>
+<h5>Teachers at Yolo</h3>
 <table class="index">
   <thead>
     <tr>
       <th>Name</th>
       <th>Email</th>
       <th>Teacher Id</th>
-      <th colspan="20"></th>
+      <th colspan="10"></th>
     </tr>
   </thead>
 
@@ -26,16 +26,15 @@
   </tbody>
 </table>
 
-<h3> Your Students </h3>
+<h5> Your Students </h3>
 <table class="index">
   <thhead>
     <tr>
       <th>Name</th>
       <th>Email</th>
-      <th colspan="20"></th>
+      <th colspan="10"></th>
     </tr>
   </head>
-
   <tbody>
     <% @students.each do |student| %>
       <tr>
@@ -49,16 +48,16 @@
   </tbody>
 </table>
 
-<h3> Your Grades </h3>
+<h5> Your Grades </h3>
 <table class="index">
   <thhead>
     <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th colspan="20"></th>
+      <th>Assignment Name</th>
+      <th>Student</th>
+      <th>Grade</th>
+      <th colspan="10"></th>
     </tr>
   </head>
-
   <tbody>
     <% @grades.each do |grade| %>
       <tr>
@@ -74,55 +73,63 @@
 </table>
 
 <tbody>
-  <% @parents.each do |parent| %>
-    <tr>
-      <td><%= parent.name %></td>
-      <td><%= parent.student.name %></td>
-      <td><%= parent.email %></td>
-      <td><%= link_to 'Show', parent %></td>
-      <td><%= link_to 'Edit', edit_parent_path(parent) %></td>
-      <td><%= link_to 'Destroy', parent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-</tbody>
+<h5> Student's Parents<h5>
+  <table class="index">
+    <thhead>
+      <tr>
+        <th>Name</th>
+        <th>Student</th>
+        <th>Email</th>
+        <th colspan="10"></th>
+      </tr>
+    </head>
+    <tbody>
+      <% @parents.each do |parent| %>
+        <tr>
+          <td><%= parent.name %></td>
+          <td><%= parent.student.name %></td>
+          <td><%= parent.email %></td>
+          <td><%= link_to 'Show', parent %></td>
+          <td><%= link_to 'Edit', edit_parent_path(parent) %></td>
+          <td><%= link_to 'Destroy', parent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
 </table>
 <div class="container" id="home" >
 
-  <div class="col-md-3  col-sm-3">
+  <div class="col-md-2  col-sm-1">
     <p>
       <div class="links" >
-      <%= link_to 'New Teacher', new_teacher_path %>
+      <%= link_to 'Teacher', new_teacher_path %>
       </div>
     </p>
   </div>
-  <div class="col-md-3  col-sm-3">
+  <div class="col-md-2  col-sm-1">
     <p>
       <div class="links" >
-      <%= link_to 'New Parent', new_parent_path %>
+      <%= link_to 'Parent', new_parent_path %>
       </div>
 
     </p>
   </div>
-  <div class="col-md-3 col-sm-3">
+  <div class="col-md-2 col-sm-1">
       <p>
         <div class="links" >
-        <%= link_to "New Student", new_student_path %>
+        <%= link_to "Student", new_student_path %>
         </div>
       </p>
   </div>
 
-<br>
-
-<div class="container" id="home" >
-  <div class="col-md-3  col-sm-3">
+  <div class="col-md-2  col-sm-1">
     <div class="links">
-      <%= link_to "Log out", sessions_destroy_path %>
+      <%= link_to "Logout", sessions_destroy_path %>
     </div>
   </div>
   </div>
-  <div class="col-md-3 col-sm-3">
+  <div class="col-md-2 col-sm-1">
     <div class="links">
-      <%= link_to "Post Grades", new_grade_path %>
+      <%= link_to "Grades", new_grade_path %>
     </div>
   </div>
 </div>

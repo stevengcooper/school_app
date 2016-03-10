@@ -5,19 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-# 10.times do |i|
-#   Teacher.create(name: Faker::Name.name, email: Faker::Internet.email, password: "monkey")
-# end
-#
-# 50.times do |i|
-#   Student.create(name: Faker::Name.name, teacher_id: rand(1..10), email: Faker::Internet.email, password: "monkey")
-# end
-#
-# 50.times do |i|
-#   Parent.create(name: Faker::Name.name, student_id: rand(1..10), email: Faker::Internet.email, password: "monkey")
-# end
-#
-# 50.times do |i|
-#   Grade.create(score: rand(55..100), date: Date.new, assignment_name: Faker::Hipster.word, teacher_id: rand(1..10), name: Faker::Name.name, student_id: rand(1..10))
-# end
-Teacher.create(name: "Sally", email: "sally@gmail.com", password: "monkey")
+10.times do |i|
+  Teacher.create(name: Faker::Name.name, email: Faker::Internet.email, password: "monkey")
+end
+
+50.times do |i|
+  Student.create(name: Faker::Name.name, teacher_id: rand(1..10), email: Faker::Internet.email, password: "monkey")
+end
+
+50.times do |i|
+  Parent.create(name: Faker::Name.name, student_id: rand(1..10), email: Faker::Internet.email, password: "monkey")
+end
+
+50.times do |i|
+  Grade.create(score: rand(55..100), date: Date.new, assignment_name: Faker::Hipster.word, teacher_id: rand(1..10), student_id: rand(1..10))
+end
