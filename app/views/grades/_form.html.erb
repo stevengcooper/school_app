@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :teacher_id %>
-    <%= f.collection_select :teacher_id, Teacher.all, :id, :name %>
+    <%= f.collection_select :teacher_id, Teacher.where(id: session[:user_id]), :id, :name %>
     <% f.hidden_field :teacher_id %>
   </div>
   <div class="field">

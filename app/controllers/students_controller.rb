@@ -22,7 +22,8 @@ class StudentsController < ApplicationController
 
   # GET /students/new
   def new
-    @student = Student.new
+      @student = Student.new
+      @teacher = Teacher.where(id: session[:user_id])
   end
 
   # GET /students/1/edit
