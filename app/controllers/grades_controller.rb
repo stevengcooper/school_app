@@ -8,7 +8,7 @@ class GradesController < ApplicationController
       parent = Parent.find(session[:user_id])
       @grades = Grade.where(student_id: parent.student_id)
     elsif session[:user_type] == "Student"
-      @grades = Grade.where(id: session[:user_id])
+      @grades = Grade.where(student_id: session[:user_id])
     elsif session[:user_type] == "Teacher"
       @grades = Grade.where(teacher_id: session[:user_id])
     end

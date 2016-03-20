@@ -10,7 +10,7 @@ class ParentsController < ApplicationController
       @parents = Parent.where(student_id: session[:user_id])
     elsif session[:user_type] = "Teacher"
       teacher = session[:user_id]
-      @parents = Parent.all
+      @parents = Parent.where(student_id: teacher.students.where(teacher_id: teacher.id))
 
     end
   end

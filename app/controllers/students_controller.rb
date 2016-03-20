@@ -1,6 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
   before_action :logged_in?
+  before_action :authenticate_teacher, except: [:edit, :update]
 
 
   # GET /students
@@ -16,6 +17,7 @@ class StudentsController < ApplicationController
 
   # GET /students/1
   def show
+
   end
 
   # GET /students/new
@@ -25,6 +27,7 @@ class StudentsController < ApplicationController
 
   # GET /students/1/edit
   def edit
+
   end
 
   # POST /students

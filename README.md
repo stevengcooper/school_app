@@ -8,4 +8,4 @@ To login as a teacher you can enter the email address of `hugh@runolfsdottirsaue
 
 To login as a student you can enter the email address of `zola@kihn.biz`
 
-To login as a student you can enter the email address of 'dorris_willms@schuster.net'
+To login as a parent you can enter the email address of 'dorris_willms@schuster.net'
