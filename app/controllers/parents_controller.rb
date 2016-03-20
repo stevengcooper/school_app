@@ -22,7 +22,7 @@ class ParentsController < ApplicationController
 
   # GET /parents/new
   def new
-
+    @teacher = Teacher.where(id: session[:user_id])
     @parent = Parent.new
   end
 
