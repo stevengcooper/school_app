@@ -5,11 +5,14 @@ class GradesController < ApplicationController
   # GET /grades
   def index
     if session[:user_type] == "Parent"
+      authenticate_parent
       parent = Parent.find(session[:user_id])
       @grades = Grade.where(student_id: parent.student_id)
     elsif session[:user_type] == "Student"
+      authenticate_student
       @grades = Grade.where(student_id: session[:user_id])
     elsif session[:user_type] == "Teacher"
+      authenticate_teacher
       @grades = Grade.where(teacher_id: session[:user_id])
     end
   end
@@ -20,16 +23,19 @@ class GradesController < ApplicationController
 
   # GET /grades/new
   def new
+    authenticate_teacher
     @grade = Grade.new
     @teacher = Teacher.find(session[:user_id])
   end
 
   # GET /grades/1/edit
   def edit
+
   end
 
   # POST /grades
   def create
+    authenticate_teacher
     @grade = Grade.new(grade_params)
 
     if @grade.save
@@ -50,6 +56,7 @@ class GradesController < ApplicationController
 
   # DELETE /grades/1
   def destroy
+    authenticate_teacher
     @grade.destroy
     redirect_to grades_url, notice: 'Grade was successfully destroyed.'
   end

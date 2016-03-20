@@ -5,9 +5,12 @@ class ParentsController < ApplicationController
 
   def index
     if session[:user_type] = "Parent"
+      authenticate_parent
       @parents = Parent.where(id: session[:user_id])
+      authenticate_student
     elsif session[:user_type] = "Student"
       @parents = Parent.where(student_id: session[:user_id])
+      authenticate_teacher
     elsif session[:user_type] = "Teacher"
       teacher = session[:user_id]
       @students = Student.where(teacher_id: session[:user_id])
@@ -22,6 +25,7 @@ class ParentsController < ApplicationController
 
   # GET /parents/new
   def new
+    authenticate_teacher
     @teacher = Teacher.where(id: session[:user_id])
     @parent = Parent.new
   end
@@ -32,6 +36,7 @@ class ParentsController < ApplicationController
 
   # POST /parents
   def create
+    authenticate_teacher
     @parent = Parent.new(parent_params)
 
     if @parent.save
@@ -52,6 +57,7 @@ class ParentsController < ApplicationController
 
   # DELETE /parents/1
   def destroy
+    authenticate_teacher
     @parent.destroy
     redirect_to parents_url, notice: 'Parent was successfully destroyed.'
   end

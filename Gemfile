@@ -25,7 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
+gem 'rails_12factor'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -41,12 +41,11 @@ group :development, :test do
   gem 'sqlite3'
   gem 'faker'
   gem 'rails-footnotes'
-  gem 'spring'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-  gem 'rails_12factor'
+  gem 'spring'
 
 end

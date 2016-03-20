@@ -1,16 +1,19 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
   before_action :logged_in?
-  
+
 
 
   # GET /students
   def index
     if session[:user_type] == "Teacher"
+      authenticate_teacher
       @students = Student.where(teacher_id: [session[:user_id]])
+      authenticate_student
     elsif session[:user_type] == "Student"
       @students = Student.where(id: session[:user_id])
     elsif session[:user_type] == "Parent"
+      authenticate_parent
       @students = Student.where(parent_id: [session[:user_id]])
     end
   end
@@ -22,8 +25,9 @@ class StudentsController < ApplicationController
 
   # GET /students/new
   def new
-      @student = Student.new
-      @teacher = Teacher.where(id: session[:user_id])
+    authenticate_teacher
+    @student = Student.new
+    @teacher = Teacher.where(id: session[:user_id])
   end
 
   # GET /students/1/edit
@@ -33,6 +37,7 @@ class StudentsController < ApplicationController
 
   # POST /students
   def create
+    authenticate_teacher
     @student = Student.new(student_params)
 
     if @student.save
@@ -53,6 +58,7 @@ class StudentsController < ApplicationController
 
   # DELETE /students/1
   def destroy
+    authenticate_teacher
     @student.destroy
     redirect_to students_url, notice: 'Student was successfully destroyed.'
   end

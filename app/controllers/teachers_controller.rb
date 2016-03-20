@@ -4,6 +4,7 @@ class TeachersController < ApplicationController
   before_action :authenticate_teacher
   # GET /teachers
   def index
+    authenticate_teacher
     @teachers = Teacher.all
     @students = Student.where(teacher_id: session[:user_id])
     @grades = Grade.where(teacher_id: session[:user_id])
@@ -18,15 +19,18 @@ class TeachersController < ApplicationController
 
   # GET /teachers/new
   def new
+    authenticate_teacher
     @teacher = Teacher.new
   end
 
   # GET /teachers/1/edit
   def edit
+    authenticate_teacher
   end
 
   # POST /teachers
   def create
+    authenticate_teacher
     @teacher = Teacher.new(teacher_params)
 
     if @teacher.save
@@ -38,6 +42,7 @@ class TeachersController < ApplicationController
 
   # PATCH/PUT /teachers/1
   def update
+    authenticate_teacher
     if @teacher.update(teacher_params)
       redirect_to @teacher, notice: 'Teacher was successfully updated.'
     else
@@ -47,6 +52,7 @@ class TeachersController < ApplicationController
 
   # DELETE /teachers/1
   def destroy
+    authenticate_teacher
     @teacher.destroy
     redirect_to teachers_url, notice: 'Teacher was successfully destroyed.'
   end
