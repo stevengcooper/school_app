@@ -5,11 +5,12 @@ class ParentsController < ApplicationController
 
   def index
     if session[:user_type] = "Parent"
-      @parents = Parent.all
+      @parents = Parent.find(session[:user_id])
     elsif session[:user_type] = "Student"
       @parents = Parent.where(student_id: session[:user_id])
     elsif session[:user_type] = "Teacher"
       teacher = session[:user_id]
+      @students = Student.where(teacher_id: session[:user_id])
       @parents = Parent.where(student_id: teacher.students.where(teacher_id: teacher.id))
 
     end
