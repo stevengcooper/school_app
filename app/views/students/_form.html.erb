@@ -12,7 +12,7 @@
   <% end %>
 
   <%= f.label :teacher_id %><br>
-  <%= f.collection_select :teacher_id, Teacher.where(id: session[:user_id]), :id, :name %>
+  <%= f.collection_select :teacher_id, Teacher.find_by(id: session[:user_id]), :id, :name %>
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>

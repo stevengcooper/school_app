@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= f.label :teacher_id %>
-    <%= f.collection_select :teacher_id, Teacher.where(id: session[:user_id]), :id, :name %>
+    <%= f.collection_select :teacher_id, Teacher.find_by(id: session[:user_id]), :id, :name %>
     <% f.hidden_field :teacher_id %>
   </div>
   <div class="field">
     <%= f.label :student_id %>
-    <%= f.collection_select :student_id, Student.where(teacher_id: session[:user_id]), :id, :name, {:prompt => 'Choose Student'} %>
+    <%= f.collection_select :student_id, Student.find_by(teacher_id: session[:user_id]), :id, :name, {:prompt => 'Choose Student'} %>
     <% f.hidden_field :student_id %>
   </div>
   <div class="field">

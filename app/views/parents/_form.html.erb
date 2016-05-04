@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :student_id %><br>
-    <%= f.collection_select :student_id, Student.where(teacher_id: session[:user_id]), :id, :name %>
+    <%= f.collection_select :student_id, Student.find_by(teacher_id: session[:user_id]), :id, :name %>
   </div>
   <div class="field">
     <%= f.label :email %><br>
